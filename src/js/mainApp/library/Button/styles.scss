@@ -1,0 +1,28 @@
+@import "../../ui.scss";
+
+.button {
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  background-color: #f0f0f0;
+  font-family: $defaultFont;
+  outline: none;
+  border: 1px solid #fefefe;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.button:hover {
+  background-color: $primaryBlue;
+  transition: background-color ease-in-out 0.2s;
+}
+
+.transparent {
+  @extend .button;
+  background: transparent;
+  border: 1px solid $primaryBlue;
+
+  &:hover {
+    background: $primaryGrey;
+  }
+}

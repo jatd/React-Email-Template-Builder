@@ -1,0 +1,82 @@
+@import "../../ui.scss";
+
+.fontDefault {
+  letter-spacing: 0.2em;
+  font-family: $defaultFont;
+  font-weight: 300;
+}
+
+.templateListContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // border-top: 2px solid #eeeeee;
+  // border-top-left-radius: 15px;
+  padding: 0px 20px;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.templateList {
+  margin: 0 5px;
+  box-sizing: border-box;
+  overflow: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.listItem {
+  width: auto;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-bottom-color: darken(#eeeeee, 5%);
+
+  @extend .fontDefault;
+  font-size: 10px;
+
+  &:hover {
+    border: 1px solid $primaryBlue;
+    border-radius: 15px;
+    transition: border-radius ease-in-out 0.2s;
+  }
+
+  i {
+    padding-left: 10px;
+    color: darken($primaryYellow, 35%);
+  }
+}
+
+.listItemSelected {
+  @extend .listItem;
+  border: 1px solid darken(#eeeeee, 5%);
+  border-radius: 15px;
+  background: white;
+}
+
+.directoryItem {
+  box-sizing: border-box;
+  padding: 10px;
+  background: $primaryYellow;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #eeeeee;
+
+  &:first-child {
+    margin-top: 5px;
+  }
+}
+
+.directoryName {
+  @extend .fontDefault;
+  cursor: pointer;
+  font-size: 12px;
+}

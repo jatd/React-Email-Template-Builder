@@ -1,0 +1,23 @@
+@import "../../ui.scss";
+
+.inputGroup {
+  padding: 5px;
+  position: relative;
+  background: transparent;
+}
+
+.default {
+  outline: none;
+  background-image: none !important;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid $primaryGrey;
+
+  &::placeholder {
+    font-style: italic;
+    color: $primaryBlue;
+    font-weight: 200;
+  }
+}

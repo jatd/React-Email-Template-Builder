@@ -1,0 +1,11 @@
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: white !important;
+}
+
+div {
+  font-family: Tahoma;
+  box-sizing: border-box;
+}
