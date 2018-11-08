@@ -9,8 +9,7 @@ import {
   Button,
   CenterElement,
   CenterContainer,
-  Bold,
-  IconWithDescription
+  Bold
 } from "../../components/library";
 import accountInfo from "../../accounts/goersDental";
 import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";

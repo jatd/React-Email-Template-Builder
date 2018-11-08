@@ -3,7 +3,7 @@
 ## Setup
 
 - npm install
-- npm run dev
-- npm run dev:server
+- Terminal #1: npm run dev
+- Terminal #2: npm run dev:server
 
 Go to Localhost:8080 to view templates.

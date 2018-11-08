@@ -3,7 +3,6 @@ import { Item, Image } from "react-html-email";
 import {
   ActionHeader,
   Sincerely,
-  ActionContainer,
   SubHeader,
   SpaceTable,
   Button,
@@ -14,7 +13,7 @@ import {
 import accountInfo from "../../accounts/edlowe";
 import ClinicEmailWrapper from "../../components/ClinicEmailWrapper/";
 
-export default function GoersDentalYearEndNewsLetter(props) {
+export default function YearEndNewsletter(props) {
   const { color, headerProps, footerProps, website } = accountInfo();
   const { phoneNumber, phoneNumberFormatted, accountName } = footerProps;
 

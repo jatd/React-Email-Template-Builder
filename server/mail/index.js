@@ -5,11 +5,6 @@ export function sendTestEmailTemplate(config) {
 }
 
 export function sendTemplate(config) {
-  const accountString = config.accountId ? `:${config.accountId}` : "";
-  const string = config.email + accountString;
-  const encoded = config.patientId
-    ? new Buffer(config.patientId).toString("base64")
-    : new Buffer(string).toString("base64");
   const defaultMergeVars = [
     {
       name: "UNSUB",
@@ -22,13 +17,13 @@ export function sendTemplate(config) {
   ];
 
   const {
-    from = "noreply@carecru.com",
+    from = "noreply@test.com",
     subject,
     toEmail,
     templateName,
     mergeVars,
     replyTo,
-    fromName = "CareCru",
+    fromName = "React Email Template Builder",
     attachments,
     html
   } = config;
@@ -40,7 +35,6 @@ export function sendTemplate(config) {
       {
         template_name: html ? "test-html-template" : templateName,
 
-        // TODO: why is this needed?
         template_content: [
           {
             name: "example name",

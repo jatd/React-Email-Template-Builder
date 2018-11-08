@@ -36,20 +36,22 @@ app.listen(port, () =>
 
 app.post("/api/sendTestTemplate", (req, res) => {
   const { html, email, fromName, subject } = req.body;
-  sendTestEmailTemplate({
-    toEmail: email || "dhillon.jatinder@gmail.com",
-    mergeVars: defaultMergeVars,
-    fromName: fromName || "Test Dental",
-    subject: subject || "Test Template",
-    html
-  })
-    .then(() => {
-      console.log("Email Sent to: ", email);
-      res.status(200).end();
-    })
-    .catch(err => {
-      console.error(err);
-    });
+  return email
+    ? sendTestEmailTemplate({
+        toEmail: email,
+        mergeVars: defaultMergeVars,
+        fromName: fromName || "Test Dental",
+        subject: subject || "Test Template",
+        html
+      })
+        .then(() => {
+          console.log("Email Sent to: ", email);
+          res.status(200).end();
+        })
+        .catch(err => {
+          console.error(err);
+        })
+    : res.status(400);
 });
 
 app.post("/api/defaultTemplate", (req, res) => {
@@ -70,70 +72,5 @@ app.get("/api/defaultTemplate", (req, res) => {
     .catch(err => console.log("ERROR:", err));
 });
 
-const defaultMergeVars = [
-  {
-    name: "PRIMARY_COLOR",
-    content: "#c5ab78"
-  },
-  {
-    name: "ACCOUNT_CLINICNAME",
-    content: "Ivory Dental"
-  },
-  {
-    name: "ACCOUNT_LOGO_URL",
-    content: ""
-  },
-  {
-    name: "ACCOUNT_PHONENUMBER",
-    content: "(140) 338-17423"
-  },
-  {
-    name: "ACCOUNT_TWILIONUMBER_FORMATTED",
-    content: "(158) 735-51719"
-  },
-  {
-    name: "ACCOUNT_TWILIONUMBER",
-    content: "+15873551719"
-  },
-  {
-    name: "ACCOUNT_CITY",
-    content: "Lethbridge, Alberta"
-  },
-  {
-    name: "ACCOUNT_CONTACTEMAIL",
-    content: "admin@ivorydental.ca"
-  },
-  {
-    name: "ACCOUNT_ADDRESS",
-    content: "335 Columbia Blvd W"
-  },
-  {
-    name: "PATIENT_FIRSTNAME",
-    content: "Justin"
-  },
-  {
-    name: "RECALL_DUEDATE",
-    content: "November 30th, 2017"
-  },
-  {
-    name: "ACCOUNT_WEBSITE",
-    content: "https://www.denverdentistry.com"
-  },
-  {
-    name: "BOOK_URL",
-    content: "https://www.ivorydental.ca/site/home/?cc=book"
-  },
-  {
-    name: "CONFIRMATION_URL",
-    content: "http://www.google.com"
-  },
-  {
-    name: "FACEBOOK_URL",
-    content: "https://www.facebook.com/IvoryDentalLethbridge/"
-  },
-  {
-    name: "GOOGLE_URL",
-    content:
-      "https://search.google.com/local/writereview?placeid=ChIJz4gv9POIblMR4bb7dpe2p1E"
-  }
-];
+// Enter your default mergeVars here;
+const defaultMergeVars = [];

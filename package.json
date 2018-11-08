@@ -1,11 +1,8 @@
 {
-  "name": "emailbuilder",
+  "name": "React-Email-Template-Builder",
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "server:watch": "webpack --watch --config ./internals/webpack/server/webpack.config.js",
-    "update:templates": "export $(cat .env | xargs) && node ./bin/build/updateTemplates.bundle.js",
-    "list:templates": "export $(cat .env | xargs) && node ./bin/build/listTemplates.bundle.js",
     "dev:server": "nodemon --watch server ./server/start.js"
   },
   "engines": {

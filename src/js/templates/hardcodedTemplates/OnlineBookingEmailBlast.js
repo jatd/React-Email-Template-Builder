@@ -37,7 +37,7 @@ const injectCSS = `
 
 export const templateName = "General Introduction Announcement";
 
-export default function IntroAnnouncementGeneral(props) {
+export default function OnlineBookingEmailBlast(props) {
   const { color } = props;
   const {
     headerProps: { logoUrl }
