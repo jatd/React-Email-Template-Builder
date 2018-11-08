@@ -80,6 +80,8 @@ class TemplateMenu extends Component {
   }
 
   render() {
+    const hasMandrillKey = process.env.MANDRILL_API_KEY;
+
     return (
       <div className={styles.templateMenu}>
         <div className={styles.templateMenuTitle}>
@@ -108,6 +110,7 @@ class TemplateMenu extends Component {
             value={this.state.formControls.subject.value}
             onChange={this.handleChange}
           />
+
           <div className={styles.buttonDiv}>
             <Button
               type="submit"

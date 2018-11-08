@@ -29,6 +29,7 @@ export function getDefaultTemplate(selectedTemplate) {
       );
     } catch (err) {
       console.log(err);
+      throw err;
     }
   };
 }

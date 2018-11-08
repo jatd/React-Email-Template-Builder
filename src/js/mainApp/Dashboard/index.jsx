@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
@@ -39,7 +38,11 @@ class Dashboard extends Component {
     const params = { html, ...values };
     this.props
       .sendTemplate(params)
-      .then(() => this.setState({ sendingEmail: false }));
+      .then(() => this.setState({ sendingEmail: false }))
+      .catch(err => {
+        console.log(err);
+        this.setState({ sendingEmail: false });
+      });
   }
 
   render() {

@@ -1,5 +1,6 @@
 // We are using node's native package 'path'
 // https://nodejs.org/api/path.html
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -24,6 +25,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(paths.SRC, "index.html")
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        MANDRILL_API_KEY: JSON.stringify(process.env.MANDRILL_API_KEY)
+      }
     })
   ],
 
