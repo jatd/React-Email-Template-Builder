@@ -5,9 +5,10 @@
   height: 100%;
   max-height: 100%;
   margin-top: 5px;
-}
-.templateDisplay {
   position: relative;
+}
+
+.templateDisplay {
   flex: 1;
   height: 100%;
   max-height: 100%;
@@ -18,11 +19,11 @@
 }
 
 .templateDisplayHtml {
-  @extend .templateDisplay;
+  @extend .templateDisplayContainer;
 
   background: $primaryGrey;
   font-size: 12px;
-  padding: 20px;
+  padding: 5px 20px;
 }
 
 .templateMenu {

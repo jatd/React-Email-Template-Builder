@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../library/Button";
 import styles from "./styles.scss";
+import logoImage from "../../../assets/images/logo3.png";
 
 function selectText(containerid) {
   if (document.selection) {
@@ -21,6 +22,8 @@ function selectText(containerid) {
 export default function TopHeader({ devMode, setDevMode }) {
   return (
     <div className={styles.topHeader}>
+      <img src={logoImage} />
+
       <div className={styles.topHeader_buttons}>
         <Button
           onClick={() => {
