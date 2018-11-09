@@ -3,18 +3,16 @@ import { Item, Image, Box } from "react-html-email";
 import {
   ActionHeader,
   Sincerely,
-  ActionContainer,
   SubHeader,
   SpaceTable,
   Button,
   CenterElement,
-  CenterContainer,
   Bold,
   Row,
   ItemCol
 } from "../../components/library/index";
-import ClinicEmailWrapper from "../../components/ClinicEmailWrapper/";
-import accountInfo from "../../accounts/galleryDental";
+import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
+import accountInfo from "../../accounts/defaultAccount";
 
 export default function GalleryDentalReferral(props) {
   const { color, headerProps, footerProps, website } = accountInfo();
@@ -43,7 +41,7 @@ export default function GalleryDentalReferral(props) {
     <ClinicEmailWrapper
       {...props}
       color={color}
-      headerProps={headerProps}
+      headerProps={{ ...headerProps, imageHeight: 70 }}
       footerProps={footerProps}
     >
       <Item>

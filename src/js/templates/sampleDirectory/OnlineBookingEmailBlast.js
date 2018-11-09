@@ -11,7 +11,7 @@ import {
   CenterContainer
 } from "../../components/library/index";
 import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
-import accountInfo from "../../accounts/epicDentistry";
+import accountInfo from "../../accounts/defaultAccount";
 
 const injectCSS = `
   .bookingWidgetGif {
@@ -35,8 +35,6 @@ const injectCSS = `
   }
 `;
 
-export const templateName = "General Introduction Announcement";
-
 export default function OnlineBookingEmailBlast(props) {
   const { color } = props;
   const {
@@ -55,8 +53,7 @@ export default function OnlineBookingEmailBlast(props) {
 
   const headerProps = {
     logoUrl,
-    imageHeight: 150,
-    imageWidth: 150
+    imageHeight: 70
   };
 
   const twilioLinkStyle = {
@@ -96,12 +93,6 @@ export default function OnlineBookingEmailBlast(props) {
             </ActionHeader>
             <SpaceTable height={35} />
 
-            <SubHeader disableTextAlign>
-              As of today, we are proud to announce that we have partnered with
-              CareCru to deliver a faster, more convenient experience for you. A
-              few of the updates we have added include:
-            </SubHeader>
-            <SpaceTable height={25} />
             <IconWithDescription
               alt="calendar"
               iconSrc="https://gallery.mailchimp.com/3a58791334fa8896539cb2841/images/41c7f961-556a-41e5-9bbf-930d4a71df4f.png"

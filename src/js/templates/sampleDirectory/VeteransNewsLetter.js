@@ -11,7 +11,7 @@ import {
   CenterContainer,
   Bold
 } from "../../components/library";
-import accountInfo from "../../accounts/goersDental";
+import accountInfo from "../../accounts/defaultAccount";
 import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
 
 export default function GoersDentalVeteransNewsletter(props) {
@@ -39,7 +39,7 @@ export default function GoersDentalVeteransNewsletter(props) {
     <ClinicEmailWrapper
       {...props}
       color={color}
-      headerProps={headerProps}
+      headerProps={{ ...headerProps, imageHeight: 70 }}
       footerProps={footerProps}
     >
       <Item>

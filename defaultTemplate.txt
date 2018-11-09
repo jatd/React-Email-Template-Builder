@@ -1,2 +1,2 @@
-GalleryDentalReferral
-Hard Coded Templates
+OnlineBookingEmailBlast
+Sample Directory

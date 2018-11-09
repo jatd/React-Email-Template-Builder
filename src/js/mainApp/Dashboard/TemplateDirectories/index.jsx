@@ -3,6 +3,16 @@ import { directories } from "../../../templates/index";
 import TemplateList from "./TemplateList";
 import styles from "./styles.scss";
 
+const sortDesc = (a, b) => {
+  if (a < b) {
+    return -1;
+  }
+  if (b < a) {
+    return 1;
+  }
+  return 0;
+};
+
 export default function TemplateDirectories({
   selectTemplate,
   selectedTemplate,
@@ -10,12 +20,12 @@ export default function TemplateDirectories({
   selectDirectory,
   setDefaultTemplate
 }) {
-  const directoryNames = Object.keys(directories);
+  const directoryNames = Object.keys(directories).sort(sortDesc);
 
   return (
     <div className={styles.templateListContainer}>
       {directoryNames.map(dir => {
-        const templateNames = Object.keys(directories[dir]);
+        const templateNames = Object.keys(directories[dir]).sort(sortDesc);
         return (
           <div className={styles.directoryItem} key={dir}>
             <span

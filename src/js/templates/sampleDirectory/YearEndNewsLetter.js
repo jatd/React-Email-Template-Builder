@@ -10,7 +10,7 @@ import {
   CenterContainer,
   Bold
 } from "../../components/library/index";
-import accountInfo from "../../accounts/edlowe";
+import accountInfo from "../../accounts/defaultAccount";
 import ClinicEmailWrapper from "../../components/ClinicEmailWrapper/";
 
 export default function YearEndNewsletter(props) {
@@ -29,7 +29,7 @@ export default function YearEndNewsletter(props) {
     <ClinicEmailWrapper
       {...props}
       color={color}
-      headerProps={headerProps}
+      headerProps={{ ...headerProps, imageHeight: 70 }}
       footerProps={footerProps}
     >
       <Item>

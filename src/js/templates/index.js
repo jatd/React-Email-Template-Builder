@@ -1,5 +1,5 @@
-import * as hardcodedTemplates from "./hardcodedTemplates";
+import * as sampleDirectory from "./sampleDirectory";
 
 export const directories = {
-  "Hard Coded Templates": hardcodedTemplates
+  "Sample Directory": sampleDirectory
 };
