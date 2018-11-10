@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
@@ -13,7 +14,6 @@ import {
 } from "../thunks/dashboard";
 import TemplateDirectories from "./TemplateDirectories";
 import TemplateDisplay from "./TemplateDisplay";
-import TopHeader from "./TopHeader";
 import styles from "./styles.scss";
 
 class Dashboard extends Component {
@@ -38,11 +38,7 @@ class Dashboard extends Component {
     const params = { html, ...values };
     this.props
       .sendTemplate(params)
-      .then(() => this.setState({ sendingEmail: false }))
-      .catch(err => {
-        console.log(err);
-        this.setState({ sendingEmail: false });
-      });
+      .then(() => this.setState({ sendingEmail: false }));
   }
 
   render() {
@@ -52,10 +48,6 @@ class Dashboard extends Component {
 
     return (
       <div className={styles.mainContainer}>
-        <TopHeader
-          setDevMode={this.props.setDevMode}
-          devMode={this.props.devMode}
-        />
         <div className={styles.dashboard}>
           <TemplateDirectories
             selectedTemplate={this.props.selectedTemplate}
@@ -69,6 +61,8 @@ class Dashboard extends Component {
             renderTemplate={this.props.renderTemplate}
             sendTemplate={this.sendTemplate}
             sendingEmail={this.state.sendingEmail}
+            setDevMode={this.props.setDevMode}
+            devMode={this.props.devMode}
           />
         </div>
       </div>

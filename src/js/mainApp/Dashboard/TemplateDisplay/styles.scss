@@ -1,13 +1,12 @@
 @import "../../ui.scss";
 
 .templateDisplayContainer {
+  position: relative;
   flex: 1;
   height: 100%;
   max-height: 100%;
   margin-top: 5px;
-  position: relative;
 }
-
 .templateDisplay {
   flex: 1;
   height: 100%;
@@ -23,7 +22,7 @@
 
   background: $primaryGrey;
   font-size: 12px;
-  padding: 5px 20px;
+  padding: 10px 10px;
 }
 
 .templateMenu {
@@ -38,6 +37,10 @@
   border-radius: 5px;
   font-size: 12px;
   box-shadow: 1px 0px 6px -1px rgba(0, 0, 0, 0.5);
+
+  @media screen and (max-width: 1024px) {
+    right: 3px;
+  }
 }
 
 .templateMenuTitle {
@@ -48,6 +51,16 @@
   text-align: left;
   i {
     margin-right: 5px;
+  }
+}
+
+.renderHtml {
+  padding: 10px 5px 10px 5px;
+  display: flex;
+  flex-direction: column;
+
+  &_selectButton {
+    margin-top: 10px;
   }
 }
 

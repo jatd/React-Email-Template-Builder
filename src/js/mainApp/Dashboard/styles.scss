@@ -1,23 +1,10 @@
 @import "../ui.scss";
 
-.topHeader {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-
-  &_buttons {
-    margin-top: 20px;
-    width: 100px;
-    margin-left: 20px;
-  }
-}
-
 .mainContainer {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 10px 100px;
   background: white;
 
   @media screen and (max-width: 1024px) {
@@ -31,10 +18,4 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-}
-
-.button {
-  &:first-child {
-    margin-bottom: 5px;
-  }
 }

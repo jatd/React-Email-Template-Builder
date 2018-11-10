@@ -1,6 +1,7 @@
 import React from "react";
 import { directories } from "../../../templates/index";
 import TemplateList from "./TemplateList";
+import logoImage from "../../../../assets/images/logo3.png";
 import styles from "./styles.scss";
 
 const sortDesc = (a, b) => {
@@ -24,6 +25,9 @@ export default function TemplateDirectories({
 
   return (
     <div className={styles.templateListContainer}>
+      <div className={styles.logo}>
+        <img src={logoImage} width={200} height={65} />
+      </div>
       {directoryNames.map(dir => {
         const templateNames = Object.keys(directories[dir]).sort(sortDesc);
         return (

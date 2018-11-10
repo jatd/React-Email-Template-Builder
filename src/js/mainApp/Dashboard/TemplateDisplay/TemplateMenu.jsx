@@ -12,6 +12,22 @@ function validateText(text) {
   return text.length > 0;
 }
 
+function selectText(containerid) {
+  if (document.selection) {
+    // IE
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+  }
+}
+
 class TemplateMenu extends Component {
   constructor(props) {
     super(props);
@@ -80,14 +96,35 @@ class TemplateMenu extends Component {
   }
 
   render() {
-    const hasMandrillKey = process.env.MANDRILL_API_KEY;
-
+    const { devMode } = this.props;
     return (
       <div className={styles.templateMenu}>
         <div className={styles.templateMenuTitle}>
-          <i className="far fa-envelope" />
-          Send Email Template
+          <i class="fas fa-align-justify" />
+          Menu
         </div>
+        <div className={styles.renderHtml}>
+          <Button
+            onClick={() => {
+              window.getSelection().removeAllRanges();
+              return this.props.setDevMode();
+            }}
+            transparent
+            className={styles.renderHtml_button}
+          >
+            {devMode ? "Render HTML" : "Render Template"}
+          </Button>
+          {!devMode && (
+            <Button
+              onClick={() => selectText("templateDisplay")}
+              className={styles.renderHtml_selectButton}
+              transparent
+            >
+              Copy to Clipboard
+            </Button>
+          )}
+        </div>
+        <div className={styles.templateMenuTitle}>Send Email Template</div>
         <form onSubmit={this.handleSubmit} className={styles.templateMenuForm}>
           <Input
             name="email"
@@ -110,7 +147,6 @@ class TemplateMenu extends Component {
             value={this.state.formControls.subject.value}
             onChange={this.handleChange}
           />
-
           <div className={styles.buttonDiv}>
             <Button
               type="submit"

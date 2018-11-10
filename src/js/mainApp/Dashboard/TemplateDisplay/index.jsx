@@ -1,7 +1,6 @@
 import React from "react";
 import mailchimpify from "mailchimpify";
 import { renderEmail } from "react-html-email";
-import { renderToStaticMarkup } from "react-dom/server";
 import TemplateMenu from "./TemplateMenu";
 import styles from "./styles.scss";
 
@@ -9,7 +8,8 @@ export default function TemplateDisplay({
   renderTemplate,
   devMode,
   sendTemplate,
-  sendingEmail
+  sendingEmail,
+  setDevMode
 }) {
   if (!renderTemplate) {
     return (
@@ -32,7 +32,7 @@ export default function TemplateDisplay({
 
   const template = renderTemplate(templateProps);
 
-  let html = renderToStaticMarkup(template);
+  let html = mailchimpify(renderEmail(template));
 
   html = html.replace(/&quot;/g, '"');
   html = html.replace(/&lt;/g, "<");
@@ -55,6 +55,8 @@ export default function TemplateDisplay({
       <TemplateMenu
         sendTemplate={values => sendTemplate(values, html)}
         sendingEmail={sendingEmail}
+        setDevMode={setDevMode}
+        devMode={devMode}
       />
     </div>
   );
