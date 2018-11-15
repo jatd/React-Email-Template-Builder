@@ -51,6 +51,12 @@
   }
 }
 
+.templateMenuTitleClickable {
+  @extend .templateMenuTitle;
+  cursor: pointer;
+  width: 60px;
+}
+
 .renderHtml {
   padding: 10px 5px 10px 5px;
   display: flex;
