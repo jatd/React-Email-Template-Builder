@@ -1,5 +1,5 @@
 import React from "react";
-import { Item, Image, Box } from "react-html-email";
+import { Item } from "react-html-email";
 import {
   ActionHeader,
   Sincerely,
@@ -9,8 +9,8 @@ import {
   Button,
   CenterElement,
   CenterContainer
-} from "../../components/library/index";
-import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
+} from "../library";
+import ClinicEmailWrapper from "../../wrappers/ClinicEmailWrapper";
 import accountInfo from "../../accounts/defaultAccount";
 
 const injectCSS = `

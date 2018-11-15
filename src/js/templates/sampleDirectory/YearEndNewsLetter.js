@@ -9,9 +9,9 @@ import {
   CenterElement,
   CenterContainer,
   Bold
-} from "../../components/library/index";
+} from "../library";
 import accountInfo from "../../accounts/defaultAccount";
-import ClinicEmailWrapper from "../../components/ClinicEmailWrapper/";
+import ClinicEmailWrapper from "../../wrappers/ClinicEmailWrapper";
 
 export default function YearEndNewsletter(props) {
   const { color, headerProps, footerProps, website } = accountInfo();

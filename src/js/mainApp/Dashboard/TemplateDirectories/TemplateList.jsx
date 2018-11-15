@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styles from "./styles.scss";
 
@@ -43,6 +44,14 @@ function TemplateList(props) {
     </div>
   );
 }
+
+TemplateList.propTypes = {
+  templateNames: PropTypes.arrayOf(PropTypes.string),
+  selectedTemplate: PropTypes.string,
+  selectTemplate: PropTypes.func.isRequired,
+  setDefaultTemplate: PropTypes.func.isRequired,
+  directoryName: PropTypes.string
+};
 
 function mapStateToProps({ dashboard: { defaultTemplate } }) {
   return {

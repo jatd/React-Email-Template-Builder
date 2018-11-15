@@ -10,9 +10,9 @@ import {
   CenterElement,
   CenterContainer,
   Bold
-} from "../../components/library";
+} from "../library";
 import accountInfo from "../../accounts/defaultAccount";
-import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
+import ClinicEmailWrapper from "../../wrappers/ClinicEmailWrapper";
 
 export default function GoersDentalVeteransNewsletter(props) {
   const { color, headerProps, footerProps, website } = accountInfo();

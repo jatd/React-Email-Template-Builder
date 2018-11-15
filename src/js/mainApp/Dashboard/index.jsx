@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import {
@@ -69,6 +69,19 @@ class Dashboard extends Component {
     );
   }
 }
+
+Dashboard.propTypes = {
+  devMode: PropTypes.bool.isRequired,
+  selectedDirectories: PropTypes.arrayOf(PropTypes.string),
+  renderTemplate: PropTypes.func,
+  selectedTemplate: PropTypes.string,
+  setDevMode: PropTypes.func.isRequired,
+  selectDirectory: PropTypes.func.isRequired,
+  selectTemplate: PropTypes.func.isRequired,
+  setDefaultTemplate: PropTypes.func.isRequired,
+  getDefaultTemplate: PropTypes.func.isRequired,
+  sendTemplate: PropTypes.func.isRequired
+};
 
 function mapStateToProps({ dashboard }) {
   const {

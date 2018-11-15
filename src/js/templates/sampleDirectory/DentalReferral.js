@@ -10,8 +10,8 @@ import {
   Bold,
   Row,
   ItemCol
-} from "../../components/library/index";
-import ClinicEmailWrapper from "../../components/ClinicEmailWrapper";
+} from "../library";
+import ClinicEmailWrapper from "../../wrappers/ClinicEmailWrapper";
 import accountInfo from "../../accounts/defaultAccount";
 
 export default function GalleryDentalReferral(props) {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { directories } from "../../../templates/index";
 import TemplateList from "./TemplateList";
 import logoImage from "../../../../assets/images/logo3.png";
@@ -59,3 +60,11 @@ export default function TemplateDirectories({
     </div>
   );
 }
+
+TemplateDirectories.propTypes = {
+  selectedDirectories: PropTypes.arrayOf(PropTypes.string),
+  selectedTemplate: PropTypes.string,
+  selectDirectory: PropTypes.func.isRequired,
+  selectTemplate: PropTypes.func.isRequired,
+  setDefaultTemplate: PropTypes.func.isRequired
+};

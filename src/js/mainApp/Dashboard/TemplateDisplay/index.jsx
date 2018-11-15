@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import mailchimpify from "mailchimpify";
 import { renderEmail } from "react-html-email";
 import TemplateMenu from "./TemplateMenu";
@@ -61,3 +62,11 @@ export default function TemplateDisplay({
     </div>
   );
 }
+
+TemplateDisplay.propTypes = {
+  devMode: PropTypes.bool.isRequired,
+  renderTemplate: PropTypes.func,
+  setDevMode: PropTypes.func.isRequired,
+  sendTemplate: PropTypes.func.isRequired,
+  sendingEmail: PropTypes.bool
+};

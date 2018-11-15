@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Input from "../../library/Input";
 import Button from "../../library/Button";
 import styles from "./styles.scss";
@@ -163,5 +164,12 @@ class TemplateMenu extends Component {
     );
   }
 }
+
+TemplateMenu.propTypes = {
+  devMode: PropTypes.bool,
+  sendingEmail: PropTypes.bool,
+  setDevMode: PropTypes.func.isRequired,
+  sendTemplate: PropTypes.func.isRequired
+};
 
 export default TemplateMenu;
