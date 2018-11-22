@@ -10,8 +10,8 @@ const localIdentName = "[name]__[local]___[hash:base64:5]";
 // Constant with our paths
 const paths = {
   DIST: path.resolve(__dirname, "dist"),
-  JS: path.resolve(__dirname, "src/js"),
-  SRC: path.resolve(__dirname, "src")
+  JS: path.resolve(__dirname, "client/js"),
+  SRC: path.resolve(__dirname, "client")
 };
 
 // Webpack configuration
