@@ -1,5 +1,9 @@
 # React Email Template Builder
 
+React Email Template Builder allows you to create email templates using customized React Components that are extensible, customizable, and responsive.
+
+![Front page](https://github.com/jatd/React-Email-Template-Builder/blob/master/React_Builder_Screen_Shot.png?raw=true)
+
 ## Setup
 
 - npm install
@@ -7,12 +11,6 @@
 - Console Terminal #2: npm run dev:server
 
 Go to http://localhost:8080 to view templates.
-
-## Adding a Directory Folder and Templates
-
-- Add a directory to the ./js/templates folder
-- index.js file of your directory should export all the templates in that directory. See sample directory for details.
-- The main index.js file in ./js/templates folder should export any directories you add. See main index file in the ./js/templates folder for details.
 
 ## Additional Setup
 
